@@ -1,4 +1,6 @@
 package com.goingmerry.pet_did.domain;
+import com.goingmerry.pet_did.domain.pet.Pet;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;

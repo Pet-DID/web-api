@@ -1,14 +1,11 @@
 package com.goingmerry.pet_did.domain;
+
+import com.goingmerry.pet_did.domain.pet.Pet;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 품종
- *
- * @author Jin
- *
- */
 @Entity
 public class Breed {
 

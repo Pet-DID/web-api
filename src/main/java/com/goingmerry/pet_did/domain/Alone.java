@@ -1,6 +1,6 @@
 package com.goingmerry.pet_did.domain;
 
-import com.goingmerry.pet_did.domain.pet.Pet;
+import com.goingmerry.pet_did.pet.domain.Pet;
 
 import javax.persistence.*;
 

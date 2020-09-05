@@ -1,4 +1,4 @@
-package com.goingmerry.pet_did.domain.pet;
+package com.goingmerry.pet_did.pet.domain;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

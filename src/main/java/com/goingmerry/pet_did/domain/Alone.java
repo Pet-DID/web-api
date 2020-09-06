@@ -10,7 +10,7 @@ import javax.persistence.*;
  * @author  Jin
  *
  */
-@Entity
+//@Entity
 public class Alone {
 
     @Id

@@ -1,13 +1,13 @@
 package com.goingmerry.pet_did.pet.domain;
 
-import com.goingmerry.pet_did.breed.domain.Breed;
-import lombok.Builder;
+import com.goingmerry.pet_did.breed.domain.BreedId;
+import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
 
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "pet")
 @Entity
 public class Pet {
@@ -16,20 +16,44 @@ public class Pet {
     private PetId id;
 
     @Embedded
-    private PetInfo petInfo;
+    private PetRequiredInfo requiredInfo;
+
+    @Embedded
+    private PetBirth birth;
 
     @ElementCollection(fetch = FetchType.LAZY)
     @CollectionTable(name = "pet_image", joinColumns = @JoinColumn(name = "image_number"))
     @OrderColumn(name = "list_idx")
     private List<PetImage> images;
 
-    // FIXME just bread ID
-    @ManyToOne
-    @JoinColumn(name = "breed_id", nullable = false)
-    private Breed breed;
+    @Embedded
+    @AttributeOverrides(
+            @AttributeOverride(name = "id", column = @Column(name = "breed_id"))
+    )
+    private BreedId breedId;
 
-    @Builder
-    public Pet(PetId id) {
+    public Pet(PetId id, PetRequiredInfo requirementInfo) {
+        setId(id);
+        setRequirementInfo(requirementInfo);
+    }
+
+    private void setId(PetId id) {
+        if (id == null) throw new IllegalArgumentException("no id");
         this.id = id;
+    }
+
+    private void setRequirementInfo(PetRequiredInfo requiredInfo) {
+        if (requiredInfo == null) throw new IllegalArgumentException("no required info");
+        this.requiredInfo = requiredInfo;
+    }
+
+    public void addImage(List<PetImage> images) {
+        if (images == null || images.size() == 0) throw new IllegalArgumentException("no images");
+        this.images.addAll(images);
+    }
+
+    public void setBreed(BreedId breedId) {
+        if (breedId == null) throw new IllegalArgumentException("no breed id");
+        this.breedId = breedId;
     }
 }

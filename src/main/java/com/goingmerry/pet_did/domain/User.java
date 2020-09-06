@@ -1,10 +1,9 @@
 package com.goingmerry.pet_did.domain;
-import com.goingmerry.pet_did.pet.domain.Pet;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 반려인
@@ -12,7 +11,7 @@ import java.util.List;
  * @author Jin
  *
  */
-@Entity
+//@Entity
 public class User {
     @Id
     @GeneratedValue
@@ -37,6 +36,6 @@ public class User {
     @Column(columnDefinition = "DEFAULT true")
     private boolean status;                         // 활성화 상태 (true: 활성화, false: 비활성화)
 
-    @OneToMany(mappedBy = "user")
-    private List<Pet> pets = new ArrayList<>();     // 반려동물
+//    @OneToMany(mappedBy = "user")
+//    private List<Pet> pets = new ArrayList<>();     // 반려동물
 }

@@ -8,7 +8,7 @@ import javax.persistence.Embedded;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Embeddable
-public class VitalStats {
+public class BreedVitalStats {
 
     @Embedded
     private Height height;

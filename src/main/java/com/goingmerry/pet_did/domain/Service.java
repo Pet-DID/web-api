@@ -1,5 +1,5 @@
 package com.goingmerry.pet_did.domain;
-import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
@@ -9,7 +9,7 @@ import javax.persistence.Id;
  * @author Jin
  *
  */
-@Entity
+//@Entity
 public class Service {
 
     @Id

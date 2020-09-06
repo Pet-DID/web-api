@@ -11,7 +11,7 @@ import java.time.ZonedDateTime;
 @Embeddable
 public class PetBirth {
 
-    @Column(name = "pet_birth")
+    @Column(name = "birth")
     private ZonedDateTime date;
 
     protected int getYear() {

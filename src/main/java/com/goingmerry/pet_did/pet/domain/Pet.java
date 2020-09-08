@@ -34,7 +34,7 @@ public class Pet {
 
     public Pet(PetId id, PetRequiredInfo requirementInfo) {
         setId(id);
-        setRequirementInfo(requirementInfo);
+        setRequiredInfo(requirementInfo);
     }
 
     private void setId(PetId id) {
@@ -42,7 +42,7 @@ public class Pet {
         this.id = id;
     }
 
-    private void setRequirementInfo(PetRequiredInfo requiredInfo) {
+    private void setRequiredInfo(PetRequiredInfo requiredInfo) {
         if (requiredInfo == null) throw new IllegalArgumentException("no required info");
         this.requiredInfo = requiredInfo;
     }

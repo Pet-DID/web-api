@@ -1,10 +1,13 @@
 package com.goingmerry.pet_did.breed.domain;
 
 import lombok.AccessLevel;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 
+@Getter @ToString
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "breed")
 @Entity

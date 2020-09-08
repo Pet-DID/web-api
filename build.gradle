@@ -36,11 +36,14 @@ dependencies {
 			"io.jsonwebtoken:jjwt-impl:$jjwtVersion",
 			"io.jsonwebtoken:jjwt-gson:$jjwtVersion"
 	)
+
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'mysql:mysql-connector-java'
+
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	annotationProcessor 'org.projectlombok:lombok'
+
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
@@ -48,7 +51,4 @@ dependencies {
 
 test {
 	useJUnitPlatform()
-	exclude '**/*Test*'
 }
-check.dependsOn -= test
-

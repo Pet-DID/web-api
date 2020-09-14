@@ -34,7 +34,10 @@ dependencies {
 			// jjwt
 			"io.jsonwebtoken:jjwt-api:$jjwtVersion",
 			"io.jsonwebtoken:jjwt-impl:$jjwtVersion",
-			"io.jsonwebtoken:jjwt-gson:$jjwtVersion"
+			"io.jsonwebtoken:jjwt-gson:$jjwtVersion",
+			// https://mvnrepository.com/artifact/net.jodah/typetools
+			'net.jodah:typetools:0.6.2'
+
 	)
 
 	compileOnly 'org.projectlombok:lombok'
